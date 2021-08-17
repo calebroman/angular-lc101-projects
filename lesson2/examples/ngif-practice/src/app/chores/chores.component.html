@@ -5,10 +5,26 @@
     </ul>
 </div>
 <hr>
-<div class="doneChores">
+<div class='doneChores' *ngIf = "chores.length === 0 || (finishedChores.length - chores.length) >=3; else noAllowance">
     <h3>Done Chores</h3>
     <ul>
         <li *ngFor = 'let done of finishedChores'>{{done}}</li>
+        <img src='https://www.launchcode.org/assets/icons/target-00c7a0bc7776901e3c5cdc4c36c465f19e41a249bc7267a595f0bfa14ab944b7.png' alt=Target>
     </ul>
 </div>
+<p *ngIf = "chores.length > finishedChores.length"> Work harder! </p>
+<h1 *ngIf = "chores.length === 0 && finishedChores.length >= 4; else iceCream">Ice cream treat!!!</h1>
 <hr>
+
+<ng-template #noAllowance>
+    <ul>
+        <li *ngFor = 'let done of finishedChores'>{{done}}</li>
+        <p>No allowance yet.</p>
+    </ul>
+</ng-template>
+
+<ng-template #iceCream>
+    <h3>How to get some ice cream, baby!</h3>
+    <p>No more chores</p>
+    <p>Gotta finish at least 4 chores, playa!</p>
+</ng-template>

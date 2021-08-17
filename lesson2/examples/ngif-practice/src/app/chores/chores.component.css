@@ -8,6 +8,7 @@
 
 h3 {
     text-align: center;
+    color:green
 }
 
 img {
@@ -15,4 +16,8 @@ img {
     height: auto;
     display: block;
     margin: auto;
+}
+
+p {
+    color:coral
 }
